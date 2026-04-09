@@ -182,7 +182,7 @@ def main():
         """
         Esta aplicación traslada a web el notebook final del trabajo.
         El apartado 1 usa **The Smiths** como referencia de álbumes de estudio.
-        El apartado 2 analiza además, letras de otros artistas que están presentes en el CSV. Como Github no permite subir archivos grandes, esta versión web solo incluye un subconjunto de los datos originales, principalmente artistas que se conoce que no son de música clásica o bandas sonoras, aseugrando así que sí tendrán letras. La cantidad de artistas y canciones disponibles es limitada. Sin embargo, se han seleccionado algunos artistas populares para asegurar una experiencia interactiva interesante. Si se quiere analizar un artista específico, puede ejecutar el notebook localmente con el dataset completo.
+        El apartado 2 analiza además, letras de otros artistas que están presentes en el CSV. Como Github no permite subir archivos grandes, esta versión web solo incluye un subconjunto de los datos originales, principalmente artistas que se conoce que no son de música clásica o bandas sonoras, ya que tienen mayor probabilidad de disponer de letras en lyrics.ovh. La cantidad de artistas y canciones disponibles es limitada. Sin embargo, se han seleccionado algunos artistas populares para asegurar una experiencia interactiva interesante. Si se quiere analizar un artista específico, puede ejecutar el notebook localmente con el dataset completo.
         """
     )
 

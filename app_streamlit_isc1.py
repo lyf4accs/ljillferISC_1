@@ -11,7 +11,7 @@ import streamlit as st
 
 st.set_page_config(page_title="ISC1 - Letras y discografía", layout="wide")
 
-DATA_FILE = "tracks_features.csv"
+DATA_FILE = "tracks_features_web.csv"
 
 STUDIO_REFERENCE = pd.DataFrame(
     {
@@ -182,7 +182,7 @@ def main():
         """
         Esta aplicación traslada a web el notebook final del trabajo.
         El apartado 1 usa **The Smiths** como referencia de álbumes de estudio.
-        El apartado 2 analiza letras de artistas que sí están presentes en el CSV.
+        El apartado 2 analiza además, letras de otros artistas que están presentes en el CSV. Como Github no permite subir archivos grandes, esta versión web solo incluye un subconjunto de los datos originales, principalmente artistas que se conoce que no son de música clásica o bandas sonoras, aseugrando así que sí tendrán letras. La cantidad de artistas y canciones disponibles es limitada. Sin embargo, se han seleccionado algunos artistas populares para asegurar una experiencia interactiva interesante. Si quieres analizar un artista específico, asegúrate de que esté presente en el CSV o considera ejecutar el notebook localmente con el dataset completo.
         """
     )
 
@@ -205,10 +205,6 @@ def main():
             st.metric("Filas de The Smiths en el CSV", int(len(smiths_df)))
         with c2:
             st.metric("Canciones de álbumes de estudio encontradas", int(len(smiths_studio_df)))
-
-        st.info(
-            "El CSV disponible no contiene canciones de The Smiths. Por eso el apartado 1 se resuelve con la discografía de referencia, y el análisis de letras del apartado 2 se realiza con otros artistas presentes en el fichero."
-        )
 
     with tab2:
         st.subheader("Exploración interactiva de letras")
@@ -284,10 +280,6 @@ def main():
                 st.pyplot(build_length_plot(length_df, selected_artist))
 
     st.divider()
-    st.markdown(
-        "**Nota:** se intentó ampliar el trabajo con Spotify Web API, pero se descartó por restricciones actuales de acceso. Esta web reutiliza la versión estable del notebook final."
-    )
-
 
 if __name__ == "__main__":
     main()
